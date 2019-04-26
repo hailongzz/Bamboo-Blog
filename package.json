@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "postinstall": "npm rebuild node-sass",
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "nyc mocha --timeout=10000 --exit",
     "lint": "eslint \"**/*.js\""
   },
@@ -69,6 +69,7 @@
     "popper.js": "^1.15.0",
     "pug": "^2.0.3",
     "request": "^2.88.0",
+    "require-dir": "^1.2.0",
     "stripe": "^6.28.0",
     "tumblr.js": "^2.0.0",
     "twilio": "^3.30.0",

@@ -1,6 +1,0 @@
-{
-  "watch": ["./controllers"],
-  "ext": "ts",
-  "ignore": ["src/**/*.spec.ts"],
-  "exec": "node ./app.js"
-}

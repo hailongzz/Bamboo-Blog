@@ -1,16 +1,26 @@
 extends layout
 
 block content
+  div.main-header
+    //- div.vertical
+      div.main-header-content.inner
+        h1.page-title lonecloud
+        h2.page-description 梦觉春衾，江南依旧远。
+        h3.page-author 《清商怨·庭花香信尚浅》 - 宋代 - 晏几道
+    //- a.scroll-down
+    //-   span.hidden
+    //-     i.scroll-down-icon.iconfont.icon-iconfontarrows1    
+  canvas#homeTopCanvas 您的浏览器不支持canvas 
   h1 Bamboo'sBlog
   p.lead 明月别枝惊鹊，清风半夜鸣蝉。稻花香里说丰年，听取蛙声一片.
   hr
   .row
     .col-md-6
-      h2 主页
+      h2 文档
         i.iconfont.icon-24.icon-nav
-      p 博客首页
+      p Technical road
       p
-        a.btn.btn-raised(href='#', role='button') View details »
+        a.btn.btn-raised(href='/core', role='button') View details »
     .col-md-6
       h2 聊天 
         i.iconfont.icon-liaotian.icon-nav
