@@ -37,6 +37,7 @@ const contactController = require('./controllers/contact');
 const chatController = require('./controllers/chat');
 const gameController = require('./controllers/game');
 const drawController = require('./controllers/draw');
+const documentController = require('./controllers/document');
 
 /**
  * API keys and Passport configuration.
@@ -141,15 +142,17 @@ app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
-//聊天功能
+// 聊天功能
 app.get('/chat', chatController.getChat);
 // app.post('/chat', chatController.postChat);
-//游戏功能
+// 游戏功能
 app.get('/game', gameController.getGame);
 // app.post('/game', gameController.postGame);
-//绘图功能
+// 绘图功能
 app.get('/draw', drawController.getDraw);
 // app.post('/draw', drawController.postDraw);
+// 个人技术文档
+app.get('/document', documentController.getDocument);
 app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
@@ -258,7 +261,6 @@ if (process.env.NODE_ENV === 'development') {
 /**
  * Start Express server.
  */
-
 app.listen(app.get('port'), () => {
   console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env'));
   console.log('  Press CTRL-C to stop\n');
