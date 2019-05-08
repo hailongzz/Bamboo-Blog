@@ -10,14 +10,16 @@
       ul.nav.navbar-nav
         li.nav-item(class=(title === 'Home') ? 'active' : undefined)
           a.nav-link(href='/') 主页
-        li.nav-item(class=(title === 'API Examples') ? 'active' : undefined)
+        li.nav-item(class=(title === 'Document') ? 'active' : undefined)
           a.nav-link(href='/document') 文档  
-        li.nav-item(class=(title === 'API Examples') ? 'active' : undefined)
+        li.nav-item(class=(title === 'Chat') ? 'active' : undefined)
           a.nav-link(href='/chat') 聊天
-        li.nav-item(class=(title === 'chat') ? 'active' : undefined)
+        li.nav-item(class=(title === 'Game') ? 'active' : undefined)
           a.nav-link(href='/game') 游戏
-        li.nav-item(class=(title === 'chat') ? 'active' : undefined)
+        li.nav-item(class=(title === 'Draw') ? 'active' : undefined)
           a.nav-link(href='/draw') 绘图
+        li.nav-item(class=(title === 'Map') ? 'active' : undefined)
+          a.nav-link(href='/map') 地图  
       ul.nav.navbar-nav.ml-auto
         if !user
           li.nav-item(class=(title === 'Login') ? 'active' : undefined)

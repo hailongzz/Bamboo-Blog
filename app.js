@@ -38,6 +38,7 @@ const chatController = require('./controllers/chat');
 const gameController = require('./controllers/game');
 const drawController = require('./controllers/draw');
 const documentController = require('./controllers/document');
+const mapController = require('./controllers/chat');
 
 /**
  * API keys and Passport configuration.
@@ -66,7 +67,7 @@ mongoose.connection.on('error', (err) => {
  * Express configuration.
  */
 app.set('host', process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0');
-app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080);
+app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8005);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.use(expressStatusMonitor());
@@ -124,6 +125,7 @@ app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 3155760000
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/chart.js/dist'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/popper.js/dist/umd'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js'), { maxAge: 31557600000 }));
+app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/aplayer/dist'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/jquery/dist'), { maxAge: 31557600000 }));
 app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts'), { maxAge: 31557600000 }));
 
@@ -144,6 +146,7 @@ app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
 // 聊天功能
 app.get('/chat', chatController.getChat);
+app.get('/map', chatController.getMap);
 // app.post('/chat', chatController.postChat);
 // 游戏功能
 app.get('/game', gameController.getGame);
