@@ -119,7 +119,7 @@ exports.getScraping = (req, res, next) => {
 exports.getGithub = async (req, res, next) => {
   const github = new GitHub();
   try {
-    const { data: repo } = await github.repos.get({ owner: 'sahat', repo: 'hackathon-starter' });
+    const { data: repo } = await github.repos.get({ owner: 'sahat', repo: 'hailongzz' });
     res.render('api/github', {
       title: 'GitHub API',
       repo

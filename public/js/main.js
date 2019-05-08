@@ -1,9 +1,20 @@
+
 /* eslint-env jquery, browser */
 $(document).ready(() => {
   // Place JavaScript code here...
+  const app = new APlayer({
+    container: document.getElementById('aplayer'),
+    autoplay: true,
+    theme: '#b7daff',
+    audio: [{
+      name: 'name',
+      artist: 'artist',
+      url: '/music/yourname.mp3',
+      cover: '/img/yourname.jpeg'
+    }]
+  });
   function canvas() {
     // 获取mycanvas画布
-    console.log('....jinlaile');
 
     const can = document.getElementById('homeTopCanvas');
     const ctx = can.getContext('2d');
@@ -39,8 +50,6 @@ $(document).ready(() => {
     }
     // 画雪花
     function DrawSnow() {
-      console.log('2222');
-
       ctx.clearRect(0, 0, wid, hei);
       ctx.beginPath();
       for (let i = 0; i < snow; i++) {
@@ -57,5 +66,4 @@ $(document).ready(() => {
     // 雪花飘落
     setInterval(DrawSnow, 60);
   }
-  canvas();
 });

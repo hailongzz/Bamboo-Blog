@@ -9,12 +9,12 @@ exports.getContact = (req, res) => {
 
   res.render('contact', {
     title: 'Contact',
-    unknownUser,  
+    unknownUser
   });
 };
 
 /**
- * POST /contact
+ * POST /contact``
  * Send a contact form via Nodemailer.
  */
 exports.postContact = (req, res) => {

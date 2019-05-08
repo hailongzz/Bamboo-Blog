@@ -193,10 +193,12 @@ textarea {
 .main-header {
   display: table;
   width: 100%;
+  height: 100%;
+  z-index: -1;
   height: 100vh;
   max-height: 100vh;
   text-align: center;
-  background:url(/img/background.jpg) center center no-repeat;
+  background:url(../img/home_top_bg.jpg) center center / cover no-repeat rgb(34, 34, 34);
   background-size: cover;
   overflow: hidden;
   position: absolute;
@@ -248,6 +250,11 @@ textarea {
   margin: auto;width: 100%;
   height: 100%;top: 0;
   bottom: 0;left: 0;right: 0;
+}
+.aplayer{
+  width: 60%;
+  position: fixed;
+  bottom:3rem;
 }
 .scroll-down {
   display: block;
