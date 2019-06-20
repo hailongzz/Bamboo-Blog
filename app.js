@@ -156,6 +156,13 @@ app.get('/draw', drawController.getDraw);
 // app.post('/draw', drawController.postDraw);
 // 个人技术文档
 app.get('/document', documentController.getDocument);
+app.get('/document/Application', documentController.getDocumentApplication);
+app.get('/document/Server', documentController.getDocumentServer);
+app.get('/document/System', documentController.getDocumentSystem);
+app.get('/document/Database', documentController.getDocumentDatabase);
+app.get('/document/Game', documentController.getDocumentGame);
+app.get('/document/React', documentController.getDocumentReact);
+
 app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
